@@ -16,18 +16,18 @@ ENV LUA_CPATH='/root/torch/install/lib/?.so;'$LUA_CPATH
 
 
 RUN cd /root/ && \
-  git clone https://github.com/manuelruder/artistic-videos.git \
-  git clone https://github.com/Teepareep/cuda-files.git \
-  cp cuda-files/cuda/include/* /usr/local/cuda/include \
-  cp cuda-files/cuda/lib64/*.so* /usr/local/cuda/lib64 \
-  cp cuda-files/deepflow2-static artistic-videos/ \
-  cp cuda-files/deepmatching-static artistic-videos/ \
-  cd artistic-videos \ 
-  mkdir models \ 
-  cd models \
-  sh download_models.sh \
-  cd /root/artistic-videos \
-  mkdir vid \
+  git clone https://github.com/manuelruder/artistic-videos.git && \
+  git clone https://github.com/Teepareep/cuda-files.git && \
+  cp cuda-files/cuda/include/* /usr/local/cuda/include && \
+  cp cuda-files/cuda/lib64/*.so* /usr/local/cuda/lib64 && \
+  cp cuda-files/deepflow2-static artistic-videos/ && \
+  cp cuda-files/deepmatching-static artistic-videos/ && \
+  cd artistic-videos && \ 
+  mkdir models && \ 
+  cd models && \
+  sh download_models.sh && \
+  cd /root/artistic-videos && \
+  mkdir vid && \
   mkdir img 
 
 # Set ~/torch as working directory
