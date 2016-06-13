@@ -1,5 +1,5 @@
 # Start with CUDA Torch dependencies
-FROM teeps/cuda-torch-video-deps
+FROM teeps/cuda-torch-artvid-deps
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Run Torch7 installation scripts
