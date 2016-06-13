@@ -4,13 +4,16 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install git, apt-add-repository and dependencies for iTorch
 RUN apt-get update && apt-get install -y \
+  vim \
   git \
   software-properties-common \
   ipython3 \
   libssl-dev \
   libzmq3-dev \
   python-zmq \
-  python-pip
+  python-pip \
+  libprotobuf-dev \
+  protobuf-compiler
 
 # Install Jupyter Notebook for iTorch
 RUN pip install notebook ipywidgets

@@ -14,7 +14,14 @@ ENV LD_LIBRARY_PATH=/root/torch/install/lib:$LD_LIBRARY_PATH
 ENV DYLD_LIBRARY_PATH=/root/torch/install/lib:$DYLD_LIBRARY_PATH
 ENV LUA_CPATH='/root/torch/install/lib/?.so;'$LUA_CPATH
 
+
+RUN cd /root/ && \
+  git clone https://github.com/manuelruder/artistic-videos.git \
+  cd artistic-videos \ 
+  
+
+
 # Set ~/torch as working directory
-WORKDIR /root/torch
+#WORKDIR /root/torch
 
 
