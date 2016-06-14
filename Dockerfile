@@ -6,6 +6,9 @@ MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 RUN cd /root/torch && \
   ./install.sh
 
+#fix cudnn
+RUN luarocks install https://raw.githubusercontent.com/soumith/cudnn.torch/R4/cudnn-scm-1.rockspec
+
 #install loadcaffe
 RUN cd /root/ && \
   luarocks install loadcaffe
