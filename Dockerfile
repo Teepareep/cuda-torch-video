@@ -1,12 +1,20 @@
 # Start with CUDA Torch dependencies
-FROM teeps/cuda-torch-artvid-deps
+FROM kaixhin/cuda-torch-deps:7.0
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
+
+RUN apt-get install -y \
+  ssh \
+  vim \
+  wget \
+  libprotobuf-dev \
+  protobuf-compiler \
+  libav-tools
 
 # Run Torch7 installation scripts
 RUN cd /root/torch && \
   ./install.sh
 
-#fix cudnn
+#install older cudnn b/c torch defaults to latest
 RUN luarocks install https://raw.githubusercontent.com/soumith/cudnn.torch/R4/cudnn-scm-1.rockspec
 
 #install loadcaffe
