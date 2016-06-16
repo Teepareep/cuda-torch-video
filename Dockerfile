@@ -14,9 +14,6 @@ RUN apt-get install -y \
 RUN cd /root/torch && \
   ./install.sh
 
-#install older cudnn b/c torch defaults to latest
-RUN luarocks install https://raw.githubusercontent.com/soumith/cudnn.torch/R4/cudnn-scm-1.rockspec
-
 #install loadcaffe
 RUN cd /root/ && \
   luarocks install loadcaffe
@@ -29,6 +26,8 @@ ENV LD_LIBRARY_PATH=/root/torch/install/lib:$LD_LIBRARY_PATH
 ENV DYLD_LIBRARY_PATH=/root/torch/install/lib:$DYLD_LIBRARY_PATH
 ENV LUA_CPATH='/root/torch/install/lib/?.so;'$LUA_CPATH
 
+#install older cudnn b/c torch defaults to latest
+RUN luarocks install https://raw.githubusercontent.com/soumith/cudnn.torch/R4/cudnn-scm-1.rockspec
 
 RUN cd /root/ && \
   git clone https://github.com/manuelruder/artistic-videos.git && \
