@@ -37,9 +37,9 @@ RUN cd /root/ && \
   cp cuda-files/deepflow2-static artistic-videos/ && \
   cp cuda-files/deepmatching-static artistic-videos/ && \
   cd artistic-videos && \ 
-  cd models && \
-  sh download_models.sh && \
-  cd /root/artistic-videos && \
+  # cd models && \
+  # sh download_models.sh && \ # this takes too long
+  # cd /root/artistic-videos && \
   mkdir vid && \
   mkdir img 
 
